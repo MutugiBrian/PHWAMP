@@ -13,12 +13,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
 <!doctype html>
 <html ⚡>
 <head>
   <meta charset="utf-8">
-  <title>AMP PWA Codelab</title>
+  <title><?php echo $title; ?></title>
   <link rel="canonical" href="http://example.com/amp-pwa-codelab">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
@@ -106,53 +105,10 @@ limitations under the License.
   </style>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
-  <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="/ampwa/project/manifest.json">
 </head>
 <body>
-  <header class="header">
-    <amp-img src="/img/amp_logo_white.svg" width="36" height="36"></amp-img>
-    <h1><a href="/">AMP PWA Codelab - AMP</a></h1>
+    <header class="header">
+    <amp-img src="img/amp_logo_white.svg" width="36" height="36"></amp-img>
+    <h1><a href="/<?php echo $path; ?>"><?php echo $name; ?></a></h1>
   </header>
-  <div class="content">
-    <ul class="article-list">
-      <li class="article-list__item">
-        <a href="/articles/1.html">
-          <amp-img class="article-list__item__img"
-              src="/articles/img/bird_cropped.png"
-              width="93"
-              height="80">
-          </amp-img>
-          <h2>Article 1</h2>
-        </a>
-      </li>
-      <li class="article-list__item">
-        <a href="/articles/2.html">
-          <amp-img class="article-list__item__img"
-              src="/articles/img/cheetah_cropped.png"
-              width="93"
-              height="80">
-          </amp-img>
-          <h2>Article 2</h2>
-        </a>
-      </li>
-      <li class="article-list__item">
-        <a href="/articles/3.html">
-          <amp-img class="article-list__item__img"
-              src="/articles/img/sloth_cropped.png"
-              width="93"
-              height="80">
-          </amp-img>
-          <h2>Article 3</h2>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <amp-install-serviceworker 
-  src="/sw.js" 
-  layout="nodisplay"
-  data-iframe-src="/install-service-worker.html"
-  data-no-service-worker-fallback-url-match=".*"
-  data-no-service-worker-fallback-shell-url="/shell.html">
-</amp-install-serviceworker>
-</body>
-</html>
