@@ -1,41 +1,57 @@
 <?php
-include 'globals.php';
-
 include 'sections/header.php';
 ?>
 
-  <div class="content">
-    <ul class="article-list">
-      <li class="article-list__item">
-        <a href="articles/1.html">
-          <amp-img class="article-list__item__img"
-              src="articles/img/bird_cropped.png"
-              width="93"
-              height="80">
-          </amp-img>
-          <h2>Article 1</h2>
-        </a>
-      </li>
-      <li class="article-list__item">
-        <a href="articles/2.html">
-          <amp-img class="article-list__item__img"
-              src="articles/img/cheetah_cropped.png"
-              width="93"
-              height="80">
-          </amp-img>
-          <h2>Article 2</h2>
-        </a>
-      </li>
-      <li class="article-list__item">
-        <a href="articles/3.html">
-          <amp-img class="article-list__item__img"
-              src="articles/img/sloth_cropped.png"
-              width="93"
-              height="80">
-          </amp-img>
-          <h2>Article 3</h2>
-        </a>
-      </li>
-    </ul>
-  </div>
- 
+
+<?php
+  if(isset($_GET['page'])){ 
+  
+  if($_GET['page']=='logout'){
+  // LOGGED OUT ALERT CODE COMES HERE
+
+  /*if(isset($_SESSION['id'])){
+    //UPDATE TO DB AS OFFINE
+    $ts = time();
+    $uid = $_SESSION['id']; 
+    $indreg = "UPDATE `users` SET `lsts` = '' WHERE `users`.`id` = $uid";   
+    $indregarray = $conn->query($indreg); 
+    if ($indregarray === TRUE) {
+    //code to alert the update
+    }else{
+    //code to alert the error
+    } 
+    }
+    session_destroy();
+    echo "<script>window.location='?';</script>";*/ 
+   
+   
+   }else{
+  
+              
+              if($_GET['page']=='home')include('includes/home.php');              
+              else {
+                if (!file_exists('pages/'.$_GET['page'].'.php')){
+                  echo "<script>alert('PAGE UNDER CONSTRUCTION');</script>";                
+                } 
+                
+                include('pages/'.$_GET['page'].'.php');
+              } }
+            }else{
+include 'pages/home.php';
+}
+
+
+
+
+
+
+
+
+
+
+include 'sections/footer.php';
+?>
+
+
+
+  

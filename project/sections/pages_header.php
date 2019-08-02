@@ -16,8 +16,7 @@ limitations under the License.
 <!doctype html>
 <?php
 //IMPORT THE CREDENTIALS
-include 'sections/common.php';
-include 'sections/functions.php';
+include '../sections/common.php';
 ?>
 <html ⚡>
 <head>
@@ -28,22 +27,20 @@ include 'sections/functions.php';
 
 <?php 
 //IMPORT STYLES.CSS 
-include 'sections/styles.php'; 
+include '../sections/styles.php'; 
 ?>
   
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
   <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
-  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-  <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
-  <link rel="manifest" href="/ampwa/project/manifest.json">
+  <link rel="manifest" href="../ampwa/project/manifest.json">
 </head>
 <body>
    <!-- Start Navbar -->
   <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 pt2 md-pt0 ts">
    <div  role="button" aria-label="open sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger  pr2 absolute top-0 pr0 mr2 mt0 "><p class="tt">☰</p></div>
-      <a href="index.php" class="text-decoration-none inline-block mx-auto ampstart-headerbar-home-link mb1 md-mb0 ">
-        <amp-img src="img/e-commerce/logo/ronin_wide.png" width="140" height="38" layout="fixed" class="my0 mx-auto " alt=""></amp-img>
+      <a href="?" class="text-decoration-none inline-block mx-auto ampstart-headerbar-home-link mb1 md-mb0 ">
+        <amp-img src="../img/e-commerce/logo/ronin_wide.png" width="140" height="38" layout="fixed" class="my0 mx-auto " alt=""></amp-img>
       </a>
     <!--
       TODO: currently "fixeditems" is an array, therefore it's not possible to
@@ -79,14 +76,14 @@ include 'sections/styles.php';
   <nav class="ampstart-sidebar-nav ampstart-nav">
     <ul class="list-reset m0 p0 ampstart-label">
         <li>
-          <a href="index.php" class="text-decoration-none block 22">
-          <amp-img src="img/e-commerce/logo/ronin_side.png" width="400" height="400" layout="responsive" class="ampstart-sidebar-nav-image inline-block mb4" alt="Company logo" noloading="">
+          <a href="?" class="text-decoration-none block 22">
+          <amp-img src="../img/e-commerce/logo/ronin_side.png" width="400" height="400" layout="responsive" class="ampstart-sidebar-nav-image inline-block mb4" alt="Company logo" noloading="">
             <div placeholder="" class="commerce-loader"></div>
           </amp-img>
           </a>
         </li>
           <li class="ampstart-nav-item tt"><a class="ampstart-nav-link" href="?page=joinemployer">JOIN AS EMPLOYER</a></li>
-          <li class="ampstart-nav-item tt"><a class="ampstart-nav-link" href="register.php">JOIN AS EMPLOYEE</a></li>
+          <li class="ampstart-nav-item tt"><a class="ampstart-nav-link" href="pages/register.php">JOIN AS EMPLOYEE</a></li>
           <li class="ampstart-nav-item tt"><a class="ampstart-nav-link" href="?page=login">LOGIN</a></li>
           <li class="ampstart-nav-item tt"><a class="ampstart-nav-link" href="?page=home">HOME</a></li>
           <li class="ampstart-nav-item tt"><a class="ampstart-nav-link" href="?page=post">POST</a></li>

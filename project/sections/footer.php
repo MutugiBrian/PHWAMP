@@ -1,3 +1,4 @@
+ </main>
  <amp-install-serviceworker 
   src="sw.js" 
   layout="nodisplay"
@@ -7,6 +8,3 @@
 </amp-install-serviceworker>
 </body>
 </html>
-<?php
-include 'sections/footer.php';
-?>
